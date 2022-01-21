@@ -1,0 +1,12 @@
+numbers = [1, 2, 3, 4, 5]
+print(numbers)
+numbers.append("abd")
+print(numbers)
+numbers.insert(4, 6)
+print(numbers)
+numbers.remove("abd")
+print(numbers)
+print(1 in numbers)
+print(len(numbers))
+numbers.clear()
+print(numbers)
