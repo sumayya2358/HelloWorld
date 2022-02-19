@@ -1,0 +1,10 @@
+MY_MESSAGE = 'My name is %s And my age is %d'
+MY_MESSAGE_TWO = 'You have guessed in %d attempt%s'
+name = "Adeeb"
+age = 29
+print(MY_MESSAGE % (name, age))
+attempt = 1
+if attempt > 1:
+    print(MY_MESSAGE_TWO % (attempt, "s"))
+else:
+    print(MY_MESSAGE_TWO % (attempt, ""))
