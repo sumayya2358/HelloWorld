@@ -9,29 +9,32 @@ class Employee:
         self.name = name
         self.age = age
         self.salary = salary
-        Employee.number_of_employees += 1
-        Employee.sum_age += age
-        Employee.sum_salary += salary
-        print(Employee.sum_age)
-        print(Employee.sum_salary)
+        Employee.calculate_average(age, salary)
 
-        @classmethod
-        def number_of_employees(cls):
-            cls.number_of_employees += 1
+    @classmethod
+    def calculate_average(cls, age, salary):
+        cls.number_of_employees()
+        cls.sum_of_age(age)
+        cls.sum_of_salary(salary)
+        cls.average_age()
+        cls.average_salary()
 
-        @classmethod
-        def sum_age(cls, age):
-            cls.sum_age += age
+    @classmethod
+    def number_of_employees(cls):
+        cls.number_of_employees += 1
 
-        @classmethod
-        def sum_salary(cls, salary):
-            cls.sum_salary += salary
+    @classmethod
+    def sum_of_age(cls, age):
+        cls.sum_of_age += age
 
-        @classmethod
-        def average_age(cls):
-            return cls.sum_age(age) / cls.number_of_employees
+    @classmethod
+    def sum_of_salary(cls, salary):
+        cls.sum_of_salary += salary
 
-        @classmethod
-        def average_salary(cls):
-            return cls.sum_salary(salary) / cls.number_of_employees
+    @classmethod
+    def average_age(cls):
+        cls.average_age = cls.sum_of_age / cls.number_of_employees
 
+    @classmethod
+    def average_salary(cls):
+        cls.average_salary = cls.sum_of_salary / cls.number_of_employees
