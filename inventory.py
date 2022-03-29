@@ -25,7 +25,7 @@ class Inventory:
     def get_items_in_price_range(self, min_price, max_price):
         list_of_names = []
         for key, value in self.item.items():
-            if value[1] >= min_price and value[1] <= max_price:
+            if min_price <= value[1] <= max_price:
                 list_of_names.append(value[0])
         return list_of_names
 
