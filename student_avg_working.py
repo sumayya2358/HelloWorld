@@ -1,3 +1,5 @@
+# Copyright © 2022 AlgoExpert LLC. All rights reserved.
+
 class Student:
     all_students = []
 
@@ -19,25 +21,21 @@ class Student:
     @classmethod
     def get_best_student(cls):
         best_student = None
-
         for student in cls.all_students:
-            if student.grade > best_student.grade:
-                max_grade = student.grade
-                print(max_grade)
-                best_student = Student(student.name, max_grade)
-                print(best_student)
+            if best_student == None or best_student.grade < student.grade:
+                best_student = student
         return best_student
-    @staticmethod
-    def calculate_average_grade(students):
-        if len(students) == 0:
-            return -1
-
-        sum_of_grade = 0
-        for student in students:
-            sum_of_grade += student.grade
-        return sum_of_grade / len(students)
 
     @classmethod
     def get_average_grade(cls):
         return cls.calculate_average_grade(cls.all_students)
 
+    @staticmethod
+    def calculate_average_grade(students):
+        if len(students) == 0:
+            return -1
+
+        total = 0
+        for student in students:
+            total += student.grade
+        return total / len(students)
